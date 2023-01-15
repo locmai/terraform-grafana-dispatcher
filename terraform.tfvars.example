@@ -1,0 +1,15 @@
+grafana_cloud_api_key = "=="
+
+discord_webhook_url = ""
+
+name = "locmai"
+
+region_slug = "prod-ap-southeast-0"
+
+domain_list = [
+  "maibaloc.com",
+  "landscape.maibaloc.com",
+  "humble.maibaloc.com",
+  "grafana.maibaloc.com",
+  "dashboard.locmai.dev",
+]
