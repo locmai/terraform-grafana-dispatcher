@@ -21,17 +21,17 @@ provider "grafana" {
 resource "grafana_cloud_stack" "dispatcher" {
   provider = grafana.cloud
 
-  name = "locmai"
-  slug = "locmai"
+  name = var.name
+  slug = var.name
 
-  region_slug = "prod-ap-southeast-0"
+  region_slug = var.region_slug
 }
 
 resource "grafana_api_key" "dispatcher" {
   provider = grafana.cloud
 
   cloud_stack_slug = grafana_cloud_stack.dispatcher.slug
-  name             = "dispatcher-key"
+  name             = "${var.name}-dispatcher-key"
   role             = "Admin"
 }
 
@@ -44,7 +44,7 @@ provider "grafana" {
 resource "grafana_cloud_api_key" "metrics_publish" {
   provider = grafana.cloud
 
-  name           = "MetricsPublisherForSM"
+  name           = "${var.name}-MetricsPublisherForSM"
   role           = "MetricsPublisher"
   cloud_org_slug = grafana_cloud_stack.dispatcher.org_slug
 }

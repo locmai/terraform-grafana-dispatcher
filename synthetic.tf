@@ -1,13 +1,3 @@
-locals {
-  check_domains = [
-    "maibaloc.com",
-    "landscape.maibaloc.com",
-    "humble.maibaloc.com",
-    "grafana.maibaloc.com",
-    "dashboard.locmai.dev",
-  ]
-}
-
 data "grafana_synthetic_monitoring_probes" "main" {
   provider = grafana.sm
 
@@ -19,7 +9,7 @@ data "grafana_synthetic_monitoring_probes" "main" {
 resource "grafana_synthetic_monitoring_check" "dns" {
   provider = grafana.sm
 
-  for_each = toset(local.check_domains)
+  for_each = toset(var.domain_list)
   job      = "dns"
   target   = each.key
   enabled  = true
@@ -37,7 +27,7 @@ resource "grafana_synthetic_monitoring_check" "dns" {
 resource "grafana_synthetic_monitoring_check" "ping" {
   provider = grafana.sm
 
-  for_each = toset(local.check_domains)
+  for_each = toset(var.domain_list)
   job      = "ping"
   target   = each.key
   enabled  = true

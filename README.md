@@ -87,7 +87,10 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_discord_webhook_url"></a> [discord\_webhook\_url](#input\_discord\_webhook\_url) | Discord Webhook URL from Server Setting's integrations tab | `string` | n/a | yes |
+| <a name="input_domain_list"></a> [domain\_list](#input\_domain\_list) | List of domain to check | `list(any)` | `[]` | no |
 | <a name="input_grafana_cloud_api_key"></a> [grafana\_cloud\_api\_key](#input\_grafana\_cloud\_api\_key) | Grafana Cloud API key for creating initialize Dispatcher cloud Stack | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Cloud stack name and slug | `string` | n/a | yes |
+| <a name="input_region_slug"></a> [region\_slug](#input\_region\_slug) | Region slug | `string` | n/a | yes |
 
 ## Outputs
 
