@@ -28,6 +28,21 @@ TBD
 
 TBD
 
+## Usage
+
+The simple usage is as follows:
+
+```hcl
+module "dispatcher" {
+  source  = "locmai/terraform-grafana-dispatcher"
+  version = "~> 0.0.1"
+
+  grafana_cloud_api_key = "<sensitive>"
+  discord_webhook_url   = "<sensitive>"
+  name                  = "test1"
+  region_slug           = "us"
+```
+
 ## Generate terraform-docs
 
 Install the terraform-docs:
