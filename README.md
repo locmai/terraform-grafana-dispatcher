@@ -41,6 +41,7 @@ module "dispatcher" {
   discord_webhook_url   = "<sensitive>"
   name                  = "test1"
   region_slug           = "us"
+}
 ```
 
 ## Generate terraform-docs
